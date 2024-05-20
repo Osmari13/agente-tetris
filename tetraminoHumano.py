@@ -15,7 +15,6 @@ class Block(pg.sprite.Sprite):
         
         self.rect = self.image.get_rect()
         
-    
 
     def is_alive(self):
         if not self.alive:               
@@ -57,9 +56,6 @@ class Tetramino:
         self.last_move = None
         self.landing = False
         self.current = current
-
-       
-
     
     def rotate(self):
         pivot_pos = self.blocks[0].pos
@@ -84,7 +80,6 @@ class Tetramino:
                 block.pos += direcciones 
         elif direccion == 'down':
             self.landing = True
-  
 
     def update(self):
        

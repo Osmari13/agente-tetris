@@ -63,8 +63,6 @@ class Block(pg.sprite.Sprite):
         return True
     
   
-             
-
 class Tetramino:
     def __init__(self, agente, current=True):
         self.agente = agente
@@ -150,18 +148,6 @@ class Tetramino:
         
         score = -altura * -10 - bloqueos * 2 - huecos * 5 + lienas_completas * 1
 
-        # w_altura = -0.5 
-        # w_lineas = 1 
-        # w_agujeros = -0.3 
-        # w_baches = -0.2
-
-        # score = (
-        #     w_altura * altura +
-        #     w_lineas * lienas_completas +
-        #     w_agujeros * huecos +
-        #     w_baches * bloqueos  
-        # )
-
         return score
  
     def alpha_beta(self,field_array, alpha, beta, depth):
@@ -191,8 +177,7 @@ class Tetramino:
         
         # Probar todas las rotaciones posibles
         for _ in range(4):
-            # Probar mover a la izquierda
-            
+            # Probar mover a la izquierda            
             for i in range(self.current_piece_x, -1, -1):
                 if self.can_move_piece(self.current_piece, i, self.current_piece_y):
                     
@@ -272,22 +257,11 @@ class Tetramino:
        
         score = -altura * -10 - bloqueos * 2 - huecos * 5 + lienas_completas * 1
 
-        # w_altura = -10 
-        # w_lineas = 30 
-        # w_agujeros = -2
-        # w_baches = -5
-
-        # score = (
-        #     w_altura * altura +
-        #     w_lineas * lienas_completas +
-        #     w_agujeros * huecos +
-        #     w_baches * bloqueos  
-        # )
-
+  
         return score
 
     def update(self):
-        #self.move(direccion='down')
+     
         best_move = self.agente_control()
         if best_move is not None:
             
@@ -300,7 +274,7 @@ class Tetramino:
             elif best_move[0] == 'next_piece':
                 self.move(direccion='down')
         self.move(direccion='down')
-        #self.move_down()
+        
         
         for block in self.blocks:
             block.update()

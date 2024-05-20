@@ -1,13 +1,8 @@
-import random
-from constHumano import FIELD_RES_HUMANO, WIN_RES_HUMAN
+from constHumano import FIELD_RES_HUMANO
 from constantes import *
-
-#from constHumano import *
-
 from agente import Agente, Text
 import sys
 import pathlib
-
 from humano import Humano, TextHumano
 
 class Juego:
@@ -45,9 +40,6 @@ class Juego:
         self.humano.update()
         self.clock.tick(FPS)
     
-    # def create_board(self):
-    #     return [[0] * FIELD_W for _ in range(FIELD_H)]
-
     def draw(self):
         
         self.screen.fill(color=BG_COLOR, rect=(500,0,*FIELD_RES))
@@ -74,48 +66,12 @@ class Juego:
                 self.fast_anim_trigger= True
     
 
-    # def check_agente(self):
-    #     self.anim_trigger = False
-    #     self.fast_anim_trigger = False
-    #     direcciones = random.choice(list(DIRECCIONES.keys()))
-        
-    #     for event in pg.event.get():
-    #         if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
-    #             pg.quit()
-    #             sys.exit()
-        
-    #         # if self.should_activate_anim_trigger():
-    #         #     self.anim_trigger = True
-    #         # elif self.should_activate_fast_anim_trigger():
-    #         #     self.fast_anim_trigger = True
-    #         else:     
-    #             self.agente.agente_control()
-      
     def check_agente(self):
       
         for event in pg.event.get():
             if event.type == pg.QUIT:
                 pg.quit()
                 sys.exit()
-
-        # Obtener el mejor movimiento del agente
-        # best_move = self.agente.tetramino.agente_control()
-        # print(best_move)
-        # if best_move is not None:
-            
-        #     if best_move[0] == 'left':
-        #         self.agente.tetramino.move_left()
-        #     elif best_move[0] == 'right':
-        #         self.agente.tetramino.move_right()
-        #     elif best_move[0] == 'rotate':
-        #         self.agente.tetramino.rotate()
-        #     elif best_move[0] == 'next_piece':
-        #         self.agente.tetramino.move_down()
-
-        
-      #  self.agente.tetramino.move_down()
-
- 
 
     def run(self):
         while True:

@@ -106,28 +106,6 @@ class Agente:
 
 
 
-    # def alpha_beta(self,field_array, alpha, beta, depth):
-    #     if depth == 0 or self.is_terminal(field_array):
-    #         return self.evaluacion(field_array)
-
-    #     moves = self.generate_moves()
-    #     best_score = float('-inf')
-    #     best_move = None
-    #     for move in moves:
-    #         new_field_array = self.tetramino.apply_move(field_array, move)
-    #         score = -self.alpha_beta(new_field_array, -beta, -alpha, depth - 1)  # Negar el resultado de la llamada recursiva
-            
-    #         self.undo_move()
-    #         if score > best_score:
-    #             best_score = score
-    #             best_move = move
-    #         alpha = max(alpha, best_score)
-    #         if alpha >= beta:
-    #             break
-    #     return best_score  
-
-  
-
     def draw_tablero(self):
         for x in range(FIELD_W):
             for y in range(FIELD_H):

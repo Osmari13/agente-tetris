@@ -1,6 +1,4 @@
-
 from constHumano import *
-
 from tetraminoHumano import Block, Tetramino
 import pygame.freetype as ft
 
